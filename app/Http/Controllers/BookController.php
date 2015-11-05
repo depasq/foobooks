@@ -20,21 +20,23 @@ class BookController extends Controller {
     /**
      * Responds to requests to GET /books/show/{id}
      */
-    public function getShow($id) {
-        return 'Show book: '.$id;
+    public function getShow($title = null) {
+
+        return view('books.show')->with('title', $title);
+
     }
 
     /**
      * Responds to requests to GET /books/create
      */
     public function getCreate() {
-        return 'Form to create a new book';
+        return view('books.create');
     }
 
     /**
      * Responds to requests to POST /books/create
      */
     public function postCreate() {
-        return 'Process adding new book';
+      return view('books.create');
     }
 }
